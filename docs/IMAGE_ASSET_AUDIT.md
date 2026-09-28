@@ -56,7 +56,7 @@ Responsive 960px WebP variants were created for future mobile optimization.
 Every placed image should describe meaning, not decoration. Example:
 
 ```txt
-School administrators using EduCore dashboards in a modern school office
+School administrators using Horizons dashboards in a modern school office
 ```
 
 ## Remaining Asset Work

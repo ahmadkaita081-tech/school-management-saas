@@ -1,5 +1,5 @@
 import { Database, KeyRound, LockKeyhole, ShieldCheck } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 const controls = [
@@ -12,8 +12,8 @@ const controls = [
 export default function SecurityPage() {
   return (
     <main className="public-page">
-      <div className="public-nav"><EduCoreLogo /><Button variant="secondary" href="/">Back home</Button></div>
-      <section className="public-hero"><span className="ui-eyebrow"><ShieldCheck size={15} /> Security</span><h1>Security principles for sensitive school data.</h1><p>EduCore protects student, parent, academic and financial records through layered access, workspace isolation and auditability.</p></section>
+      <div className="public-nav"><HorizonsLogo /><Button variant="secondary" href="/">Back home</Button></div>
+      <section className="public-hero"><span className="ui-eyebrow"><ShieldCheck size={15} /> Security</span><h1>Security principles for sensitive school data.</h1><p>Horizons protects student, parent, academic and financial records through layered access, workspace isolation and auditability.</p></section>
       <section className="public-card-grid">{controls.map((control) => { const Icon = control.icon; return <article className="ui-card ui-card-pad public-card" key={control.title}><Icon /><h2>{control.title}</h2><p>{control.body}</p></article>; })}</section>
       <section className="public-panel"><h2>Report a concern</h2><p>Found something that worries you? Write to the security contact and it will be handled privately — never post account or data issues publicly.</p></section>
     </main>

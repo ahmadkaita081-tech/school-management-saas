@@ -1,11 +1,11 @@
-# EduCore — School Management Platform
+# Horizons — School Management Platform
 
-EduCore is a multi-tenant school management platform built for Nigerian institutions —
+Horizons is a multi-tenant school management platform built for Nigerian institutions —
 primary and secondary schools, colleges, polytechnics and universities. It replaces paper
 registers, scattered spreadsheets and ad-hoc messaging with one system for admissions,
 attendance, results, fees and parent communication.
 
-**Author:** Abdulbasit Abdulalim
+**Author:** Ahmad Yandaki
 
 - GitHub: https://github.com/basgenix4u
 - Website: https://alimswrite.com
@@ -26,7 +26,7 @@ spreadsheet, and parents learn about arrears when a child is sent home. Existing
 usually priced for Western schools, assumes reliable broadband, and does not model Nigerian
 academic structure.
 
-EduCore is built for the way Nigerian schools actually operate: terms and sessions rather than
+Horizons is built for the way Nigerian schools actually operate: terms and sessions rather than
 semesters, continuous assessment alongside examinations, naira invoicing with Paystack, and a
 mobile-first parent experience that works on a modest phone and an intermittent connection.
 

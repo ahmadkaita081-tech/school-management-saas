@@ -82,7 +82,7 @@ export default function Landing() {
             Run your school from admission to report card.
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-ink-500">
-            EduCore replaces paper registers, scattered spreadsheets and lost messages with one
+            Horizons replaces paper registers, scattered spreadsheets and lost messages with one
             system for students, attendance, results, fees and parent communication.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

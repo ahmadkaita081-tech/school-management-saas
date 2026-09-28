@@ -1,6 +1,6 @@
 # Staging Launch Runbook
 
-Staging is where EduCore proves itself before any real school touches it: a
+Staging is where Horizons proves itself before any real school touches it: a
 fresh Supabase project, all migrations, a deployed app, and two test schools
 that cannot see each other. Work top to bottom; each step gates the next.
 

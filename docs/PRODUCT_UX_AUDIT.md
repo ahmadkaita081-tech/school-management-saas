@@ -1,8 +1,8 @@
-# EduCore Product UX Audit
+# Horizons Product UX Audit
 
 ## Executive Summary
 
-EduCore is being positioned as an operating system for modern schools, not a generic admin dashboard. The product must win trust quickly because it handles sensitive student, parent, academic and financial data.
+Horizons is being positioned as an operating system for modern schools, not a generic admin dashboard. The product must win trust quickly because it handles sensitive student, parent, academic and financial data.
 
 Primary product promise:
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BookOpenCheck, CheckCircle2, LifeBuoy } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 const supportPaths = [
@@ -12,11 +12,11 @@ const supportPaths = [
 export default function SupportPage() {
   return (
     <main className="public-page">
-      <div className="public-nav"><EduCoreLogo /><Button variant="secondary" href="/">Back home</Button></div>
+      <div className="public-nav"><HorizonsLogo /><Button variant="secondary" href="/">Back home</Button></div>
       <section className="public-hero">
         <span className="ui-eyebrow"><LifeBuoy size={15} /> Support</span>
         <h1>Support that keeps school operations moving.</h1>
-        <p>EduCore support is designed around fast diagnosis, clear ownership and safe handling of school data.</p>
+        <p>Horizons support is designed around fast diagnosis, clear ownership and safe handling of school data.</p>
       </section>
       <section className="public-card-grid">
         {supportPaths.map((item) => <article className="ui-card ui-card-pad public-card" key={item.title}><BookOpenCheck /><h2>{item.title}</h2><p>{item.body}</p><Link href={item.href}>Open resource</Link></article>)}

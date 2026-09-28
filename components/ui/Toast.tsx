@@ -7,7 +7,7 @@ export type ToastTone = "info" | "success" | "danger";
 
 type ToastMessage = { id: number; text: string; tone: ToastTone };
 
-const EVENT = "educore:toast";
+const EVENT = "Horizons:toast";
 let nextId = 1;
 
 export function toast(text: string, tone: ToastTone = "info") {

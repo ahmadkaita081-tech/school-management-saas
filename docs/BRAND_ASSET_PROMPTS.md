@@ -5,7 +5,7 @@ Use these prompts with Midjourney, DALL·E, Firefly, Leonardo, Ideogram or anoth
 ## Logo Prompt
 
 ```txt
-Create a premium SaaS logo for “EduCore”, a modern school management operating system. Symbol should combine a graduation cap, structured data grid, and protective shield concept. Style: minimal geometric vector, enterprise SaaS, trustworthy, modern, scalable, strong silhouette, works as app icon and wordmark. Colors: deep navy, electric blue, emerald green, white. No cartoon style, no 3D, no mockup, no gradients that reduce legibility. Output clean vector-style logo on transparent background.
+Create a premium SaaS logo for “Horizons”, a modern school management operating system. Symbol should combine a graduation cap, structured data grid, and protective shield concept. Style: minimal geometric vector, enterprise SaaS, trustworthy, modern, scalable, strong silhouette, works as app icon and wordmark. Colors: deep navy, electric blue, emerald green, white. No cartoon style, no 3D, no mockup, no gradients that reduce legibility. Output clean vector-style logo on transparent background.
 ```
 
 ## Homepage Hero Background Prompt

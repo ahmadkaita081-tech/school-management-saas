@@ -1,6 +1,6 @@
 # Authentication and RBAC Architecture
 
-EduCore is designed for role-aware SaaS access across multiple schools.
+Horizons is designed for role-aware SaaS access across multiple schools.
 
 ## Roles
 

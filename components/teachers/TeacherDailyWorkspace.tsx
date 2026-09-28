@@ -84,7 +84,7 @@ function RegisterBoard() {
   const [backlog, setBacklog] = useState(0);
 
   const outbox = useMemo(
-    () => new RegisterOutbox(createLocalStore("educore:register-outbox"), (payload) => sendRegister(payload.date, payload.period, payload.marks)),
+    () => new RegisterOutbox(createLocalStore("Horizons:register-outbox"), (payload) => sendRegister(payload.date, payload.period, payload.marks)),
     [],
   );
 

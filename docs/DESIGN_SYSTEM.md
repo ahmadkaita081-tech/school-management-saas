@@ -1,4 +1,4 @@
-# EduCore Design System
+# Horizons Design System
 
 ## Design Principles
 

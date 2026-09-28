@@ -1,7 +1,7 @@
 /**
  * Staging environment check.
  *
- * Verifies the variables EduCore needs are present before a deploy goes out.
+ * Verifies the variables Horizons needs are present before a deploy goes out.
  * Only names are ever printed — values stay out of logs by construction.
  *
  * Usage: node scripts/check-env.mjs

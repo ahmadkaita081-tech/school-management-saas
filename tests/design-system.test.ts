@@ -112,7 +112,7 @@ describe("brand unity", () => {
     return found;
   }
 
-  it("carries the EduCore name everywhere", () => {
+  it("carries the Horizons name everywhere", () => {
     const offenders: string[] = [];
     for (const file of [...sources("app"), ...sources("components"), ...sources("lib"), ...sources("docs"), ...sources("public")]) {
       if (/edumanage/i.test(read(file))) offenders.push(file);

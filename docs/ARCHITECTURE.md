@@ -1,8 +1,8 @@
-# EduCore Architecture
+# Horizons Architecture
 
 ## Application Type
 
-EduCore is designed as a multi-tenant SaaS platform for schools and training institutions.
+Horizons is designed as a multi-tenant SaaS platform for schools and training institutions.
 
 ## Core Domains
 

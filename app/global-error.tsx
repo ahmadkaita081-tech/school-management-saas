@@ -14,7 +14,7 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
     <html lang="en">
       <body style={{ margin: 0, fontFamily: "system-ui, sans-serif", background: "#f7f8fa", color: "#0b1524" }}>
         <main style={{ maxWidth: "32rem", margin: "4rem auto", padding: "2rem", background: "#ffffff", borderRadius: "16px", border: "1px solid #dde2e9" }}>
-          <h1 style={{ fontSize: "1.5rem", margin: "0 0 0.5rem" }}>EduCore could not start this page</h1>
+          <h1 style={{ fontSize: "1.5rem", margin: "0 0 0.5rem" }}>Horizons could not start this page</h1>
           <p style={{ lineHeight: 1.6, color: "#253449" }}>
             Something failed while loading. Your data is safe — try again, or return to the home page.
           </p>

@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in improving EduCore.
+Thank you for your interest in improving Horizons.
 
 ## Development Workflow
 

@@ -1,6 +1,6 @@
 {
-  "name": "EduCore",
-  "short_name": "EduCore",
+  "name": "Horizons",
+  "short_name": "Horizons",
   "description": "Admissions, attendance, results, fees and parent communication for Nigerian institutions.",
   "start_url": "/",
   "display": "standalone",

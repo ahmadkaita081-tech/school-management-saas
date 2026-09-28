@@ -1,6 +1,6 @@
 # Deployment and Testing Guide
 
-This guide explains how to deploy EduCore and test the full SaaS experience.
+This guide explains how to deploy Horizons and test the full SaaS experience.
 
 ## Recommended Deployment Target
 
@@ -407,7 +407,7 @@ EMAIL_FROM
 Recommended `EMAIL_FROM` format:
 
 ```txt
-EduCore <noreply@yourdomain.com>
+Horizons <noreply@yourdomain.com>
 ```
 
 Communication APIs:

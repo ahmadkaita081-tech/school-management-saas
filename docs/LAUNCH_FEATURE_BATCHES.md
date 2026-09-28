@@ -1,4 +1,4 @@
-# EduCore Launch Feature Batches
+# Horizons Launch Feature Batches
 
 This is the remaining production roadmap organized into two-feature batches so the product can move quickly toward launch.
 

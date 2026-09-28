@@ -1,6 +1,6 @@
 # Remaining Feature Roadmap
 
-This roadmap lists the remaining features to take EduCore from premium portfolio SaaS to a production-ready commercial school platform.
+This roadmap lists the remaining features to take Horizons from premium portfolio SaaS to a production-ready commercial school platform.
 
 ## Priority 1 — Production Foundation
 

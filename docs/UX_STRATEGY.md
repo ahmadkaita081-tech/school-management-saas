@@ -1,6 +1,6 @@
 # Premium UX Strategy
 
-EduCore is designed to feel like a high-end SaaS operating system, not a basic school admin panel.
+Horizons is designed to feel like a high-end SaaS operating system, not a basic school admin panel.
 
 ## Product Experience Goals
 
