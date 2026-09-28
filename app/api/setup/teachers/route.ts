@@ -1,26 +1,79 @@
-import { requestClientOrNull } from "@/lib/supabase/request-client";
-import { withAuth } from "@/lib/auth/api-guard";
+import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 import { apiError } from "@/lib/http";
-import { getOrganizationForWrite, upsertTeachers } from "@/lib/supabase/school-data";
-import { invalidInputResponse, teachersBulkSchema } from "@/lib/validation";
-import { checkRateLimit, rateLimitedResponse, rateLimitKey } from "@/lib/rate-limit";
+import { withAuth } from "@/lib/auth/api-guard";
+import { requestClientOrNull } from "@/lib/supabase/request-client";
 
+export const POST = withAuth("teachers.manage", async (request: NextRequest) => {
+    try {
+        const { teachers } = await request.json();
 
-export const POST = withAuth("teachers.manage", async (request: NextRequest, context) => {
-  {
-    const throttle = checkRateLimit(rateLimitKey(request, "setup-teachers"), { limit: 30, windowMs: 60_000 });
-    if (!throttle.allowed) return rateLimitedResponse(throttle.retryAfterMs);
-  }
-  const supabase = await requestClientOrNull();
-  if (!supabase) return NextResponse.json({ status: "not_configured", message: "Connect Supabase environment variables before saving staff." }, { status: 503 });
-  const parsed = teachersBulkSchema.safeParse(await request.json().catch(() => null));
-  if (!parsed.success) return invalidInputResponse(parsed);
-  try {
-    const organization = await getOrganizationForWrite(supabase);
-    const teachers = await upsertTeachers(supabase, organization.id, parsed.data.teachers, { email: context.user.email, role: context.role });
-    return NextResponse.json({ status: "saved", data: teachers });
-  } catch (error) {
-    return apiError("POST /api/setup/teachers", error);
-  }
+        if (!Array.isArray(teachers) || teachers.length === 0) {
+            return NextResponse.json({ error: "No teachers provided" }, { status: 400 });
+        }
+
+        const supabase = await requestClientOrNull();
+        if (!supabase) {
+            return NextResponse.json({ error: "Database not configured" }, { status: 500 });
+        }
+
+        const supabaseAdmin = createClient(
+            process.env.NEXT_PUBLIC_SUPABASE_URL!,
+            process.env.SUPABASE_SERVICE_ROLE_KEY!,
+            { auth: { persistSession: false } }
+        );
+
+        const results = [];
+
+        for (const teacher of teachers) {
+            const { email, name, staffNo, classroom } = teacher;
+
+            if (!email) continue;
+
+            let userId: string;
+
+            // 1. Try to send the invitation email
+            const { data: authData, error: authError } = await supabaseAdmin.auth.admin.inviteUserByEmail(email, {
+                redirectTo: `${request.nextUrl.origin}/auth/update-password`,
+            });
+
+            if (authError) {
+                // If the user already exists or rate limit was hit, look up the existing user so we don't block setup
+                if (authError.message.includes("rate limit") || authError.message.includes("already registered")) {
+                    const { data: existingUsers, error: listError } = await supabaseAdmin.auth.admin.listUsers();
+                    const existingUser = existingUsers?.users.find((u) => u.email === email);
+                    
+                    if (listError || !existingUser) {
+                        return NextResponse.json({ error: `Auth error: ${authError.message}` }, { status: 400 });
+                    }
+                    userId = existingUser.id;
+                } else {
+                    return NextResponse.json({ error: authError.message }, { status: 400 });
+                }
+            } else {
+                userId = authData.user.id;
+            }
+
+            // 2. Insert/Upsert into the public teachers table using the shared UUID
+            const { error: dbError } = await supabase
+                .from("teachers")
+                .upsert({
+                    id: userId,
+                    email,
+                    name,
+                    staff_no: staffNo,
+                    classroom,
+                });
+
+            if (dbError) {
+                return NextResponse.json({ error: dbError.message }, { status: 400 });
+            }
+
+            results.push({ email, userId });
+        }
+
+        return NextResponse.json({ success: true, results });
+    } catch (error) {
+        return apiError("POST /api/setup/teachers", error);
+    }
 });

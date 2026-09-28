@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useMemo, useState } from "react";
 import { ArrowRight, Eye, EyeOff, KeyRound, Loader2, LockKeyhole, Mail, ShieldCheck, UserRound } from "lucide-react";
 import { roleExperiences, roleLabels, UserRole } from "@/lib/rbac";
 import { roleHome } from "@/lib/nav";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { createBrowserSupabaseClient, hasBrowserSupabaseConfig } from "@/lib/supabase/browser";
 import { Alert, type AlertTone } from "@/components/ui/Alert";
 import { Button } from "@/components/ui/Button";
@@ -174,10 +174,10 @@ export function LoginExperience() {
   return (
     <main className="login-shell">
       <section className="login-brand-panel">
-        <div className="login-brand-logo"><EduCoreLogo href="" /></div>
+        <div className="login-brand-logo"><HorizonsLogo href="" /></div>
         <span className="ui-eyebrow ui-eyebrow-light"><ShieldCheck size={14} /> Secure School OS</span>
         <h1>Role-aware access built for serious school operations.</h1>
-        <p>EduCore is designed for owners, principals, teachers, accountants, parents and students — each with a focused workspace and permission boundary.</p>
+        <p>Horizons is designed for owners, principals, teachers, accountants, parents and students — each with a focused workspace and permission boundary.</p>
         <div className="login-showcase">
           <strong>{selected.workspace}</strong>
           <span>{selected.headline}</span>
@@ -187,7 +187,7 @@ export function LoginExperience() {
 
       <section className="login-card">
         <span className="ui-eyebrow">Secure Access</span>
-        <h2>{mode === "signin" ? "Sign in to EduCore" : mode === "signup" ? "Create school owner account" : "Set a new password"}</h2>
+        <h2>{mode === "signin" ? "Sign in to Horizons" : mode === "signup" ? "Create school owner account" : "Set a new password"}</h2>
         <p>{mode === "signin" ? "Access your school workspace." : mode === "signup" ? "Create the first account, then set up your school profile." : "Complete password recovery for your account."}</p>
 
         {mode !== "reset" ? (

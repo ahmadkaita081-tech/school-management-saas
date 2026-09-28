@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { Mail, MessageCircle, ShieldCheck } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 export default function ContactPage() {
   return (
     <main className="public-page">
-      <div className="public-nav"><EduCoreLogo /><Button variant="secondary" href="/">Back home</Button></div>
+      <div className="public-nav"><HorizonsLogo /><Button variant="secondary" href="/">Back home</Button></div>
       <section className="public-hero">
         <span className="ui-eyebrow"><MessageCircle size={15} /> Contact</span>
-        <h1>Talk to the EduCore team.</h1>
+        <h1>Talk to the Horizons team.</h1>
         <p>Use this page for school onboarding, product questions, technical support, partnerships and deployment assistance.</p>
       </section>
       <section className="public-card-grid">

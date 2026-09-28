@@ -1,5 +1,5 @@
 import { Database, KeyRound, LockKeyhole, ShieldCheck } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 const controls = [

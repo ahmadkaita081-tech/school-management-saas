@@ -1,5 +1,5 @@
 import { ArrowLeft, Award } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
 import { requestClientOrNull } from "@/lib/supabase/request-client";
 import { getReportCardBundle } from "@/lib/supabase/school-data";
 import { getGrade } from "@/lib/results/grading";

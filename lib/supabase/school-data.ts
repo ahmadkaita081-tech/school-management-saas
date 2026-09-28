@@ -1674,11 +1674,23 @@ export type StudentProfile = {
  * Combines the record, computed risk, invoices, recent registers and result
  * averages. Sections without records come back empty and the page says so.
  */
-export async function getStudentProfile(client: SupabaseClient, admissionNo: string): Promise<StudentProfile | null> {
-  const organization = await getPrimaryOrganization(client);
-  if (!organization) return null;
-  const student = await getStudentByAdmission(client, organization.id, admissionNo);
-  if (!student) return null;
+export async function getStudentProfile(client: SupabaseClient, identifier: string): Promise<StudentProfile | null> {
+    const organization = await getPrimaryOrganization(client);
+    if (!organization) return null;
+
+    let student = await getStudentByAdmission(client, organization.id, identifier);
+    
+    if (!student) {
+        const { data: studentById } = await client
+            .from("students")
+            .select("*")
+            .eq("id", identifier)
+            .eq("organization_id", organization.id)
+            .maybeSingle();
+        student = studentById;
+    }
+
+    if (!student) return null;
 
   const classroom = student.classroom_id
     ? await client.from("classrooms").select("name").eq("id", student.classroom_id).maybeSingle<{ name: string }>().then((result) => result.data?.name ?? "Unassigned", () => "Unassigned")

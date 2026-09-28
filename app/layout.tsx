@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
-  title: "EduCore — Modern School Management",
+  title: "Horizons — Modern School Management",
   description: "The modern school management platform. Simple. Powerful. Built for real schools.",
-  applicationName: "EduCore",
+  applicationName: "Horizons",
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "EduCore — School Management Platform",
+    title: "Horizons — School Management Platform",
     description: "Admissions, attendance, results, fees and parent communication for Nigerian institutions.",
   },
 };

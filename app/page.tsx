@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BellRing, ClipboardCheck, FileSpreadsheet, ReceiptText, ShieldCheck, UsersRound } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
@@ -60,7 +60,7 @@ export default function Landing() {
     <div className="bg-canvas text-ink-900">
       <header className="border-b border-border-subtle bg-surface">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <EduCoreLogo />
+          <HorizonsLogo />
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex" aria-label="Primary">
             <a href="#features" className="hover:text-primary-700">Features</a>
             <a href="#how-it-works" className="hover:text-primary-700">How it works</a>
@@ -147,7 +147,7 @@ export default function Landing() {
 
       <footer className="border-t border-border-subtle bg-surface">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-ink-500 md:flex-row">
-          <EduCoreLogo />
+          <HorizonsLogo />
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" aria-label="Footer">
             <Link href="/pricing" className="hover:text-primary-700">Pricing</Link>
             <Link href="/security" className="hover:text-primary-700">Security</Link>
@@ -157,7 +157,7 @@ export default function Landing() {
             <Link href="/privacy" className="hover:text-primary-700">Privacy</Link>
             <Link href="/terms" className="hover:text-primary-700">Terms</Link>
           </nav>
-          <p>© {new Date().getFullYear()} EduCore. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Horizons. All rights reserved.</p>
         </div>
       </footer>
     </div>

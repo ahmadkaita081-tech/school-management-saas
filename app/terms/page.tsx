@@ -1,4 +1,4 @@
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 export default function TermsPage() {

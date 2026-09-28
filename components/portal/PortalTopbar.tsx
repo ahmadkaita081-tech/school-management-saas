@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LogOut } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 export function PortalTopbar({ label, homeHref }: { label: string; homeHref: string }) {

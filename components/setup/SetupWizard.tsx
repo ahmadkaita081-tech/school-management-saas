@@ -142,7 +142,9 @@ export function SetupWizard() {
         await postJson("/api/setup/fees", { fees: [{ name: form.get("name"), amount: Number(form.get("amount") || 0), billingCycle: form.get("billingCycle"), required: form.get("required") === "on" }] });
         setMessage("Fee category saved.");
       }
-      event.currentTarget.reset();
+      if (event.currentTarget) {
+    event.currentTarget.reset();
+}
       await loadReadiness();
       setStep((current) => Math.min(current + 1, steps.length - 1));
     } catch (error) {

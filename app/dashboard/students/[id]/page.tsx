@@ -33,7 +33,8 @@ function attendanceTone(status: string): BadgeTone {
 }
 
 export default async function StudentProfilePage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+  const resolvedParams = await params;
+const id = decodeURIComponent(resolvedParams.id);
   const supabase = await requestClientOrNull();
   if (!supabase) {
     return (
@@ -54,16 +55,27 @@ export default async function StudentProfilePage({ params }: { params: Promise<{
 
   return (
     <div className="page">
-      <p><Button variant="ghost" size="sm" href="/dashboard/students"><ArrowLeft size={16} /> Back to students</Button></p>
-      <header className="page-head">
-        <p className="page-eyebrow">{student.admission_no} · {profile.student.classroom}</p>
-        <h1 className="page-title">{name}</h1>
-        <p className="page-subtitle">
-          {student.gender ?? "—"} · Guardian: {student.guardian_name ?? "not linked"}
-          {student.guardian_phone ? ` (${formatPhoneForDisplay(student.guardian_phone)})` : ""}
-        </p>
-      </header>
+      <header className="page-head flex justify-between items-start">
+        <div>
+            <p className="page-eyebrow">{student.admission_no} • {profile.student.classroom}</p>
+            <h1 className="page-title">{name}</h1>
+            <p className="page-subtitle">
+                {student.gender ?? "-"} • Guardian: {student.guardian_name ?? "not linked"} 
+                {student.guardian_phone ? ` (${formatPhoneForDisplay(student.guardian_phone)})` : ""}
+            </p>
+        </div>
 
+        {/* Unenroll / Remove Form */}
+        <form action="/api/students/delete" method="POST">
+            <input type="hidden" name="studentId" value={student.id} />
+            <button 
+                type="submit" 
+                className="px-3 py-1.5 bg-red-50 text-red-600 hover:bg-red-100 text-xs font-semibold rounded-md transition"
+            >
+                Unenroll Student
+            </button>
+        </form>
+    </header>
       <p><Badge tone={riskTone(risk)}>{risk} risk</Badge></p>
 
       <MetricGrid>

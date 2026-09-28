@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BookOpenCheck, CheckCircle2, LifeBuoy } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
 import { Button } from "@/components/ui/Button";
 
 const supportPaths = [

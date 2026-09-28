@@ -7,7 +7,7 @@ import {
   Award, Briefcase, CalendarCheck, ClipboardCheck, History, Home, KeyRound, LifeBuoy,
   LogOut, Megaphone, Menu, ReceiptText, Rocket, Settings, Sparkles, UsersRound, X,
 } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/EduCoreLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { navForRole } from "@/lib/nav";
 import type { UserRole } from "@/lib/rbac";
 
@@ -82,7 +82,7 @@ export function DashboardLayout({ children, user, schoolName }: { children: Reac
       <a className="skip-link" href="#main-content">Skip to content</a>
       <aside className="dash-sidebar">
         <div className="dash-brand">
-          <EduCoreLogo />
+          <HorizonsLogo />
         </div>
         <div className="dash-nav-scroll">{nav}</div>
         <div className="dash-sidebar-foot">
@@ -96,7 +96,7 @@ export function DashboardLayout({ children, user, schoolName }: { children: Reac
       {open ? (
         <div className="dash-mobile-nav" role="dialog" aria-label="Dashboard navigation">
           <div className="dash-mobile-head">
-            <EduCoreLogo />
+            <HorizonsLogo />
             <button type="button" onClick={() => setOpen(false)} aria-label="Close navigation">
               <X size={20} />
             </button>
