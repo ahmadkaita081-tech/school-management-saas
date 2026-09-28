@@ -1,5 +1,5 @@
 import { ArrowLeft, Award } from "lucide-react";
-import { EduCoreLogo } from "@/components/brand/HorizonsLogo";
+import { HorizonsLogo } from "@/components/brand/HorizonsLogo";
 import { requestClientOrNull } from "@/lib/supabase/request-client";
 import { getReportCardBundle } from "@/lib/supabase/school-data";
 import { getGrade } from "@/lib/results/grading";
@@ -56,7 +56,7 @@ export default async function ReportCardPage({ params }: { params: Promise<{ stu
 
       <article className="report-card">
         <header>
-          <div className="report-logo"><EduCoreLogo href="" /></div>
+          <div className="report-logo"><HorizonsLogo href="" /></div>
           <div>
             <h1>{bundle.organizationName ?? "School Academic Report"}</h1>
             <p>Academic Report Card • {bundle.term} • {bundle.session}</p>
