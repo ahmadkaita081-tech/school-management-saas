@@ -27,4 +27,3 @@ export function HorizonsLogo({ href = "/", compact = false, className = "" }: Lo
 
   return href ? <Link href={href} aria-label="Horizons home">{content}</Link> : content;
 }
-export { HorizonsLogo as EduCoreLogo };
