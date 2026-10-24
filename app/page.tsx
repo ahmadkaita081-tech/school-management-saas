@@ -40,18 +40,18 @@ const features = [
 const steps = [
   {
     step: "1",
-    title: "Create your school account",
-    body: "Sign up as the school owner in minutes. Your school gets its own secure workspace.",
+    title: "Select your school",
+    body: "Search and choose your institution from the gateway directory.",
   },
   {
     step: "2",
-    title: "Set up the session",
-    body: "Add the current session and term, create classes, enrol staff and students, and define term fees.",
+    title: "Choose your role",
+    body: "Select whether you are logging in as an Admin, Teacher, Student, or Parent.",
   },
   {
     step: "3",
-    title: "Run the term",
-    body: "Mark registers, raise invoices, enter scores and publish results — with parents following along from their phones.",
+    title: "Access your portal",
+    body: "Enter your verified credentials to access your custom dashboard.",
   },
 ];
 
@@ -69,8 +69,7 @@ export default function Landing() {
             <Link href="/faq" className="hover:text-primary-700">FAQ</Link>
           </nav>
           <div className="flex items-center gap-2">
-            <Button href="/login" variant="ghost" size="sm">Log in</Button>
-            <Button href="/login" size="sm">Create school account</Button>
+            <Button href="/select-school" size="sm">Select School</Button>
           </div>
         </div>
       </header>
@@ -86,12 +85,12 @@ export default function Landing() {
             system for students, attendance, results, fees and parent communication.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/login">
-              Create school account <ArrowRight size={18} aria-hidden="true" />
+            <Button href="/select-school">
+              Select School <ArrowRight size={18} aria-hidden="true" />
             </Button>
             <Button href="/contact" variant="secondary">Talk to us</Button>
           </div>
-          <p className="mt-3 text-sm text-ink-500">Set up your first term in an afternoon.</p>
+          <p className="mt-3 text-sm text-ink-500">Access your school portal in seconds.</p>
         </section>
 
         <section id="features" className="border-y border-border-subtle bg-surface">
@@ -117,7 +116,7 @@ export default function Landing() {
         <section id="how-it-works" className="mx-auto max-w-6xl px-4 py-14">
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-ink-500">How it works</p>
           <h2 className="mx-auto mt-2 max-w-xl text-center text-3xl font-bold tracking-tight">
-            From signup to school-day in three steps.
+            Access your workspace in three steps.
           </h2>
           <ol className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-3">
             {steps.map((item) => (
@@ -132,14 +131,12 @@ export default function Landing() {
 
         <section className="bg-surface-inverse text-ink-inverse">
           <div className="mx-auto max-w-3xl px-4 py-16 text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ready to run this term properly?</h2>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Ready to access your portal?</h2>
             <p className="mx-auto mt-3 max-w-xl text-lg opacity-80">
-              Create your school account and set up the current session today. Your registers,
-              invoices and results will finally live in one place.
+              Find your school, choose your role, and log in to manage registers, invoices, and results.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href="/login">Create school account</Button>
-              <Button href="/pricing" variant="secondary">See plans</Button>
+              <Button href="/select-school">Select School</Button>
             </div>
           </div>
         </section>
